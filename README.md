@@ -22,6 +22,7 @@ exit
 ## To Run
 
 ```
+cd docs
 poetry shell
 mkdocs serve --dev-addr 0.0.0.0:8000
 ```
