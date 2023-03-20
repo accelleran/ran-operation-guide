@@ -36,10 +36,10 @@ plugins:
 extra_css:
   - css/extra.css
 nav:
-    - 'op-guide/index.md'
-    - 'op-guide/cu-configuration/index.md'
-    - 'op-guide/modifying-ran650-or-ran550/index.md'
-    - 'op-guide/handover-configuration/index.md'
-    - 'op-guide/mocn-and-slicing/index.md'
-    - 'op-guide/nodeh-du-ru-operation/index.md'
-    - 'op-guide/logs-collection/index.md'
+    - 'index.md'
+    - 'cu-configuration/index.md'
+    - 'modifying-ran650-or-ran550/index.md'
+    - 'handover-configuration/index.md'
+    - 'mocn-and-slicing/index.md'
+    - 'nodeh-du-ru-operation/index.md'
+    - 'logs-collection/index.md'
