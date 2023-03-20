@@ -1,7 +1,14 @@
+# Accelleran O-RAN Operation Guide
 
-# Testing The Doc
+This is based on system release 2022.4.0
 
-## Prerequest
+## Document Published Link
+
+???
+
+## Preview The Document
+
+### Prerequest
 
 - Assuming **docs** directory is already available
 ```
@@ -18,11 +25,11 @@ pip3 install mkdocs-section-index
 ```
 exit
 ```
-
-## To Run
-
+- Start the server side.
 ```
 cd docs
 poetry shell
 mkdocs serve --dev-addr 0.0.0.0:8000
 ```
+- Access the document: 
+[http://<machine_ip>:8000/ran-operation-guide/](http://<machine_ip>:8000/ran-operation-guide/)
