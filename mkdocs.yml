@@ -1,0 +1,45 @@
+site_name: Accelleran 5G O-RAN System - 2022.4.0 release
+
+site_url: https://accelleran.github.io/ran-operation-guide/
+theme: 
+  logo: images/accelleran_logo.png
+  favicon: images/accelleran_favicon.png
+  name: material
+  features:
+    - navigation.instant
+    - navigation.tracking
+    - navigation.expand
+    - navigation.top
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.sections
+    - toc.integrate
+markdown_extensions:
+  - admonition
+  - attr_list
+  - pymdownx.highlight
+  - pymdownx.superfences
+  - toc:
+      permalink: true
+extra:
+  version:
+    provider: mike
+plugins:
+  - search:
+  - mike:
+      version_selector: true   # set to false to leave out the version selector
+      css_dir: css             # the directory to put the version selector's CSS
+      javascript_dir: js       # the directory to put the version selector's JS
+      canonical_version: null  # the version for <link rel="canonical">; `null`
+                               # uses the version specified via `mike deploy`
+  - section-index
+extra_css:
+  - css/extra.css
+nav:
+    - 'op-guide/index.md'
+    - 'op-guide/cu-configuration/index.md'
+    - 'op-guide/modifying-ran650-or-ran550/index.md'
+    - 'op-guide/handover-configuration/index.md'
+    - 'op-guide/mocn-and-slicing/index.md'
+    - 'op-guide/nodeh-du-ru-operation/index.md'
+    - 'op-guide/logs-collection/index.md'
