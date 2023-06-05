@@ -13,19 +13,19 @@ It monitors a DU and RU through periodic health checks and uses the control inte
 
 
 ## 2. Releases
-This document is released together with the system release 2022.4.0. 
+This document is released together with the system release 2023.1.0. 
 This system release contains 
 
 | component    | version                        |
 |--------------|--------------------------------|
-| RIC          | 6.2.0                          |
-| CU CHART     | 5.2.0                          |
-| CU APP       | R3.4.2_ichtegem                |
-| DU           | 2023-02-14-q4-patch-release-01 |
+| RIC          | 6.3.0                          |
+| CU CHART     | 5.3.0                          |
+| CU APP       | R4.1.0_jupiler                 |
+| DU           | 2023-05-08-q1-patch-release-01 |
 | L1           | 8.7.4                          |
-| BNTL650      | 0.5.3                          |
+| BNTL650      | 0.7.0                          |
 | BNTL550      | 0.5.2/0.6.0                    |
-| cell wrapper | 2.0.0                          |
+| cell wrapper | 2.2.0                          |
 | DU/RU        | 5.1.0.30736                    |
 
 ## 3. Dashboard

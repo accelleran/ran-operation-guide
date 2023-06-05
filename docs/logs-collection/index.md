@@ -10,7 +10,7 @@ As part of radio related issues debugging. Please run below commands on the radi
 ```bash
 ssh root@10.10.0.100
 cat /etc/benetel-rootfs-version
-cat /tmp/radio_status
+cat /tmp/logs/radio_status
 reportRuStatus
 radiocontrol -o G a
 radiocontrol -o D s
