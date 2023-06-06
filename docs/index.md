@@ -7,7 +7,7 @@ This guide describes how to operate the Accelleran ORAN 5G  Platform and the dif
 
 This means that the installation and initial configuration of the System has been already made by Accelleran Customer Support and there is no need to worry about how to prepare the server, install and initialise the components.
 
-2022.4.0 release include Accelleran Cell Wrapper, which works as a layer on top of the DU and RU. This provides a common interface for configuration and controls over a cell. 
+2023.1.0 release include Accelleran Cell Wrapper, which works as a layer on top of the DU and RU. This provides a common interface for configuration and controls over a cell. 
 
 It monitors a DU and RU through periodic health checks and uses the control interface internally to attempt an automatic repair from failures. These health checks include checks for reachability, traffic, container status and checks on a set of log messages. 
 
