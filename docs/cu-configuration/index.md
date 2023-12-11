@@ -39,4 +39,4 @@ The 5G CU-UP has a number of configuration parameters as seen below:
   <img src="../mocn-and-slicing/mocn_example_cu_up_config.png">
 </p>
 
-**IMPORTANT**  Do not attempt to modify slices and PLMNs unless you are aware of the target Scenario you want to achieve: slice configuration and multiple PLMN (MOCN) configurations are rather complex to handle and require that CU, DU and Core are configured coherently in order for such Scenarios to be functional. We recommend to consult the relative sections of this document and contact your Core Network Supplier and Accelleran to tailor a solution for your specific case. 
+**IMPORTANT**  Do not attempt to modify slices and PLMNs unless you are aware of the target Scenario you want to achieve: slice configuration and multiple PLMN (MOCN) configurations are rather complex to handle and require that CU, DU and Core are configured coherently in order for such scenarios to be functional. We recommend to consult the relative sections of this document and contact your Core Network Supplier and Accelleran to tailor a solution for your specific case. 
