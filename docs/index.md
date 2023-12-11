@@ -7,25 +7,25 @@ This guide describes how to operate the Accelleran ORAN 5G  Platform and the dif
 
 This means that the installation and initial configuration of the System has been already made by Accelleran Customer Support and there is no need to worry about how to prepare the server, install and initialise the components.
 
-2023.1.0 release include Accelleran Cell Wrapper, which works as a layer on top of the DU and RU. This provides a common interface for configuration and controls over a cell. 
+2023.2.0 release includes Accelleran Cell Wrapper, which works as a layer on top of the DU and RU. This provides a common interface for configuration and control over a cell. 
 
-It monitors a DU and RU through periodic health checks and uses the control interface internally to attempt an automatic repair from failures. These health checks include checks for reachability, traffic, container status and checks on a set of log messages. 
+It monitors a DU and RU through periodic health checks and uses the control interface internally to attempt an automatic repair from failures. These health checks include checks for reachability of the servers, traffic thresholds, status of the applications and checks on a set of log messages. 
 
 
 ## 2. Releases
-This document is released together with the system release 2023.1.0. 
+This document is released together with the system release 2023.2.0. 
 This system release contains 
 
 | component    | version                        |
 |--------------|--------------------------------|
-| RIC          | 6.3.0                          |
-| CU CHART     | 5.3.0                          |
-| CU APP       | R4.1.0_jupiler                 |
+| RIC          | 6.5.2                          |
+| CU CHART     | 6.0.0                          |
+| CU APP       | R4.2.3_jupiler                 |
 | DU           | 2023-05-08-q1-patch-release-01 |
 | L1           | 8.7.4                          |
 | BNTL650      | 0.7.0                          |
 | BNTL550      | 0.5.2/0.6.0                    |
-| cell wrapper | 2.2.0                          |
+| cell wrapper | 2.3.0                          |
 | DU/RU        | 5.1.0.30736                    |
 
 ## 3. Dashboard
@@ -41,7 +41,7 @@ From the **Home** tab the cell status can be monitored and the UEs attached to i
 
 Furthermore, from the **Kubernetes Overview** tab, the status of the RIC/CU/CellWrapper pods and services can be monitored.
 
-The DRAX dashboard also uses grafana to view measurements and Counters.
+The DRAX dashboard also uses grafana to view measurements and counters.
 
 - This can be accessed via ```https://"RIC_CU_VM_IP":30300```
 - A number of reports will be readily available on this release for example:

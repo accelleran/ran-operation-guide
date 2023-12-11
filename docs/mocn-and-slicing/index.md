@@ -4,13 +4,13 @@
 
 ## 1. Multi Slice Configuration
 
-To enable multiple slices support for a cell, the different components of the network must be configured to support them.
+To enable support for multiple slices in a cell, the different components of the network must be configured correctly to support them.
 
-As an example, Assuming we want to configure three slices: (SST:1), (SST:1,SD:1), (SST2)
+As an example, assuming we want to configure three slices: (SST:1), (SST:1,SD:1), (SST2)
 
 ### 1.1. CU-UP Multi Slice Configuration
 
-Here, the CU UP must be configured with all the Slices that the Core and the Cell will be configured with to support.
+Here, the CU UP must be configured with all the slices so that it can offer user plane support for all the slices:
 
 - From the dashboard go to **RAN Overview** then **5G**
 - From the **CU-UP List**, click on configuration.
@@ -25,7 +25,7 @@ Here, the CU UP must be configured with all the Slices that the Core and the Cel
 
 ### 1.2. DU Multi Slice Configuration
 
-Similar to the CU UP, the DU must be configured with the slices that it needs to support.
+Similar to the CU UP, the DU must be configured with the slices that it needs to support:
 
 - From the dashboard go to **RAN Overview** then **5G**
 - From the **DU/RU List**, click on configuration.
@@ -37,17 +37,15 @@ Similar to the CU UP, the DU must be configured with the slices that it needs to
   <img src="slicing_example_du_config.png">
 </p>
 
-### 1.3. Core MOCN Configuration 
+### 1.3. Core multi slice Configuration 
 
 The core connected should support the slices enabled on the cell. In our example the core should be configured with (SST:1), (SST:1,SD:1), (SST2).
 
-As core configuration would be done differently based on which core vendor is used. It wouldn't be part of this document. Please contact Accelleran with the details of the core used to provide support if possible. 
+The 5G core configuration depends on the vendor chose and is out of the scope of this document.  Please contact Accelleran with the details of the 5G core used to provide support if possible. 
 
-## 2. MOCN Configuration
+## 2. Multi-Operator Core Network (MOCN) Configuration
 
-To configure the Cell to support MOCN (Multi-Operator Core Network) scenarios 
-
-In order to obtain a working setup with MOCN, it is essential that all the network components are aligned and configured coherently to serve the same list of PLMNIDs.
+In order to obtain a working setup with MOCN, it is essential that all the network components are aligned and configured coherently to serve the same list of PLMNIDs and slices.
 
 As an example, this section will show how to configure the below scenario, where one cell will broadcast two PLMNIDs so that UE1 will connect to Core1 and UE2 will connect to Core2.
 
@@ -98,4 +96,4 @@ Similar to the CU UP, the DU must be configured with the PLMN IDs and slices tha
 
 The cores connected should support the PLMN IDs. In our example core1 should be configured with PLMNID 00101, and core2 with PLMNID 00102. 
 
-As core configuration would be done differently based on which core vendor is used. It wouldn't be part of this document. Please contact Accelleran with the details of the core used to provide support if possible. 
+The 5G core configuration depends on the vendor chose and is out of the scope of this document. Please contact Accelleran with the details of the core used to provide support if possible. 
