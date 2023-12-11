@@ -8,56 +8,57 @@
       
       
       
-      
         <link rel="canonical" href="https://accelleran.github.io/ran-operation-guide/modifying-ran650-or-ran550/">
       
+      
+        <link rel="prev" href="../cu-configuration/">
+      
+      
+        <link rel="next" href="../handover-configuration/">
+      
+      
       <link rel="icon" href="../images/accelleran_favicon.png">
-      <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-7.3.6">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.1">
     
     
       
-        <title>DU/RU Configuration - Accelleran 5G O-RAN System - 2023.1.0 release</title>
+        <title>DU/RU Configuration - Accelleran 5G O-RAN System - 2023.2.0 release</title>
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.a57b2b03.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.45e1311d.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
       
         
-        <link rel="stylesheet" href="../assets/stylesheets/palette.3f5d1f46.min.css">
-        
-      
-    
-    
-    
-      
         
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
-        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
       
-    
     
     
       <link rel="stylesheet" href="../css/extra.css">
     
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
-
+    
     
     
   </head>
   
   
-    
-    
-    
-    
-    
-    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+    <body dir="ltr">
   
-    
-    <script>function __prefix(e){return new URL("..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
@@ -74,25 +75,31 @@
       
     </div>
     
+      <div data-md-color-scheme="default" data-md-component="outdated" hidden>
+        
+      </div>
+    
+    
       
 
   
 
-<header class="md-header md-header--lifted" data-md-component="header">
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href=".." title="Accelleran 5G O-RAN System - 2023.1.0 release" class="md-header__button md-logo" aria-label="Accelleran 5G O-RAN System - 2023.1.0 release" data-md-component="logo">
+    <a href=".." title="Accelleran 5G O-RAN System - 2023.2.0 release" class="md-header__button md-logo" aria-label="Accelleran 5G O-RAN System - 2023.2.0 release" data-md-component="logo">
       
   <img src="../images/accelleran_logo.png" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
     </label>
     <div class="md-header__title" data-md-component="header-title">
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            Accelleran 5G O-RAN System - 2023.1.0 release
+            Accelleran 5G O-RAN System - 2023.2.0 release
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
@@ -106,24 +113,30 @@
     </div>
     
     
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
     
       <label class="md-header__button md-icon" for="__search">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
       </label>
-      
-<div class="md-search" data-md-component="search" role="dialog">
+      <div class="md-search" data-md-component="search" role="dialog">
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
       <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
       <label class="md-search__icon md-icon" for="__search">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
       </label>
       <nav class="md-search__options" aria-label="Search">
         
-        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
         </button>
       </nav>
       
@@ -134,7 +147,7 @@
           <div class="md-search-result__meta">
             Initializing search
           </div>
-          <ol class="md-search-result__list"></ol>
+          <ol class="md-search-result__list" role="presentation"></ol>
         </div>
       </div>
     </div>
@@ -147,31 +160,41 @@
     
       
 <nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
-  <div class="md-tabs__inner md-grid">
+  <div class="md-grid">
     <ul class="md-tabs__list">
       
         
   
   
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+    
+  
+  Operational User Guide
 
-
-  <li class="md-tabs__item">
-    <a href=".." class="md-tabs__link">
-      Operational User Guide
-    </a>
-  </li>
+      </a>
+    </li>
+  
 
       
         
   
   
+  
+    <li class="md-tabs__item">
+      <a href="../cu-configuration/" class="md-tabs__link">
+        
+  
+    
+  
+  CU Configuration
 
-
-  <li class="md-tabs__item">
-    <a href="../cu-configuration/" class="md-tabs__link">
-      CU Configuration
-    </a>
-  </li>
+      </a>
+    </li>
+  
 
       
         
@@ -179,61 +202,86 @@
   
     
   
+  
+    <li class="md-tabs__item md-tabs__item--active">
+      <a href="./" class="md-tabs__link">
+        
+  
+    
+  
+  DU/RU Configuration
 
-
-  <li class="md-tabs__item">
-    <a href="./" class="md-tabs__link md-tabs__link--active">
-      DU/RU Configuration
-    </a>
-  </li>
+      </a>
+    </li>
+  
 
       
         
   
   
+  
+    <li class="md-tabs__item">
+      <a href="../handover-configuration/" class="md-tabs__link">
+        
+  
+    
+  
+  Handover Configuration
 
-
-  <li class="md-tabs__item">
-    <a href="../handover-configuration/" class="md-tabs__link">
-      Handover Configuration
-    </a>
-  </li>
+      </a>
+    </li>
+  
 
       
         
   
   
+  
+    <li class="md-tabs__item">
+      <a href="../mocn-and-slicing/" class="md-tabs__link">
+        
+  
+    
+  
+  Multi Slice and MOCN Configuration
 
-
-  <li class="md-tabs__item">
-    <a href="../mocn-and-slicing/" class="md-tabs__link">
-      Multi Slice and MOCN Configuration
-    </a>
-  </li>
+      </a>
+    </li>
+  
 
       
         
   
   
+  
+    <li class="md-tabs__item">
+      <a href="../nodeh-du-ru-operation/" class="md-tabs__link">
+        
+  
+    
+  
+  Split 2 Cell Operation
 
-
-  <li class="md-tabs__item">
-    <a href="../nodeh-du-ru-operation/" class="md-tabs__link">
-      Split 2 Cell Operation
-    </a>
-  </li>
+      </a>
+    </li>
+  
 
       
         
   
   
+  
+    <li class="md-tabs__item">
+      <a href="../logs-collection/" class="md-tabs__link">
+        
+  
+    
+  
+  Logs Collection
 
-
-  <li class="md-tabs__item">
-    <a href="../logs-collection/" class="md-tabs__link">
-      Logs Collection
-    </a>
-  </li>
+      </a>
+    </li>
+  
 
       
     </ul>
@@ -258,6 +306,7 @@
                   <div class="md-sidebar__inner">
                     
 
+
   
 
 
@@ -265,26 +314,31 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href=".." title="Accelleran 5G O-RAN System - 2023.1.0 release" class="md-nav__button md-logo" aria-label="Accelleran 5G O-RAN System - 2023.1.0 release" data-md-component="logo">
+    <a href=".." title="Accelleran 5G O-RAN System - 2023.2.0 release" class="md-nav__button md-logo" aria-label="Accelleran 5G O-RAN System - 2023.2.0 release" data-md-component="logo">
       
   <img src="../images/accelleran_logo.png" alt="logo">
 
     </a>
-    Accelleran 5G O-RAN System - 2023.1.0 release
+    Accelleran 5G O-RAN System - 2023.2.0 release
   </label>
   
   <ul class="md-nav__list" data-md-scrollfix>
     
       
       
-      
-
+  
   
   
   
     <li class="md-nav__item">
       <a href=".." class="md-nav__link">
-        Operational User Guide
+        
+  
+  <span class="md-ellipsis">
+    Operational User Guide
+  </span>
+  
+
       </a>
     </li>
   
@@ -292,14 +346,19 @@
     
       
       
-      
-
+  
   
   
   
     <li class="md-nav__item">
       <a href="../cu-configuration/" class="md-nav__link">
-        CU Configuration
+        
+  
+  <span class="md-ellipsis">
+    CU Configuration
+  </span>
+  
+
       </a>
     </li>
   
@@ -307,32 +366,42 @@
     
       
       
-      
-
   
   
     
   
   
+  
     <li class="md-nav__item md-nav__item--active">
       
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
         
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          DU/RU Configuration
+          
+  
+  <span class="md-ellipsis">
+    DU/RU Configuration
+  </span>
+  
+
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        DU/RU Configuration
+        
+  
+  <span class="md-ellipsis">
+    DU/RU Configuration
+  </span>
+  
+
       </a>
       
         
-
 
 <nav class="md-nav md-nav--secondary" aria-label="Table of contents">
   
@@ -349,7 +418,9 @@
       
         <li class="md-nav__item">
   <a href="#1-parameter-configuration" class="md-nav__link">
-    1. Parameter Configuration
+    <span class="md-ellipsis">
+      1. Parameter Configuration
+    </span>
   </a>
   
     <nav class="md-nav" aria-label="1. Parameter Configuration">
@@ -357,7 +428,9 @@
         
           <li class="md-nav__item">
   <a href="#11-configuring-center-frequency" class="md-nav__link">
-    1.1. Configuring Center Frequency
+    <span class="md-ellipsis">
+      1.1. Configuring Center Frequency
+    </span>
   </a>
   
     <nav class="md-nav" aria-label="1.1. Configuring Center Frequency">
@@ -365,14 +438,18 @@
         
           <li class="md-nav__item">
   <a href="#111-finding-a-proper-frequency" class="md-nav__link">
-    1.1.1. Finding a Proper Frequency
+    <span class="md-ellipsis">
+      1.1.1. Finding a Proper Frequency
+    </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#112-applying-the-frequency-change" class="md-nav__link">
-    1.1.2. Applying The Frequency Change
+    <span class="md-ellipsis">
+      1.1.2. Applying The Frequency Change
+    </span>
   </a>
   
 </li>
@@ -384,7 +461,9 @@
         
           <li class="md-nav__item">
   <a href="#12-configuring-cell-tx-power" class="md-nav__link">
-    1.2. Configuring Cell TX Power
+    <span class="md-ellipsis">
+      1.2. Configuring Cell TX Power
+    </span>
   </a>
   
 </li>
@@ -396,7 +475,9 @@
       
         <li class="md-nav__item">
   <a href="#2-checking-ru-status" class="md-nav__link">
-    2. Checking RU Status
+    <span class="md-ellipsis">
+      2. Checking RU Status
+    </span>
   </a>
   
 </li>
@@ -411,14 +492,19 @@
     
       
       
-      
-
+  
   
   
   
     <li class="md-nav__item">
       <a href="../handover-configuration/" class="md-nav__link">
-        Handover Configuration
+        
+  
+  <span class="md-ellipsis">
+    Handover Configuration
+  </span>
+  
+
       </a>
     </li>
   
@@ -426,14 +512,19 @@
     
       
       
-      
-
+  
   
   
   
     <li class="md-nav__item">
       <a href="../mocn-and-slicing/" class="md-nav__link">
-        Multi Slice and MOCN Configuration
+        
+  
+  <span class="md-ellipsis">
+    Multi Slice and MOCN Configuration
+  </span>
+  
+
       </a>
     </li>
   
@@ -441,14 +532,19 @@
     
       
       
-      
-
+  
   
   
   
     <li class="md-nav__item">
       <a href="../nodeh-du-ru-operation/" class="md-nav__link">
-        Split 2 Cell Operation
+        
+  
+  <span class="md-ellipsis">
+    Split 2 Cell Operation
+  </span>
+  
+
       </a>
     </li>
   
@@ -456,14 +552,19 @@
     
       
       
-      
-
+  
   
   
   
     <li class="md-nav__item">
       <a href="../logs-collection/" class="md-nav__link">
-        Logs Collection
+        
+  
+  <span class="md-ellipsis">
+    Logs Collection
+  </span>
+  
+
       </a>
     </li>
   
@@ -477,28 +578,29 @@
             
             
           
-          <div class="md-content" data-md-component="content">
-            <article class="md-content__inner md-typeset">
-              
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
                 
-                
-                <h1 id="duru-configuration">DU/RU Configuration<a class="headerlink" href="#duru-configuration" title="Permanent link">&para;</a></h1>
-<p>This section is exclusively applicable to the user/customer that intends to use the Benetel RAN550 or RAN650 Radio End with our Accellleran 5G end to end solution, if you do not have such radio end the informations included in this section may be misleading and bring to undefined error scenarios. Please contact Accelleran if your Radio End is not included in any section of this user guide</p>
+                  
+
+
+<h1 id="duru-configuration">DU/RU Configuration<a class="headerlink" href="#duru-configuration" title="Permanent link">&para;</a></h1>
+<p>This section is exclusively applicable to the user/customer that intends to use the Benetel RAN550 or RAN650 Radio End with our Accellleran 5G end to end solution, if you do not have such radio end the informations included in this section may be misleading and bring to undefined error scenarios. Please contact Accelleran if your Radio End is not included in any section of this user guide.</p>
 <h2 id="1-parameter-configuration">1. Parameter Configuration<a class="headerlink" href="#1-parameter-configuration" title="Permanent link">&para;</a></h2>
 <h3 id="11-configuring-center-frequency">1.1. Configuring Center Frequency<a class="headerlink" href="#11-configuring-center-frequency" title="Permanent link">&para;</a></h3>
-<p>Take into account that if system release 2022.4.0 is used, adjusting the center frequency will require applying the change on the RU and on the DU (extra step shown below).</p>
 <h4 id="111-finding-a-proper-frequency">1.1.1. Finding a Proper Frequency<a class="headerlink" href="#111-finding-a-proper-frequency" title="Permanent link">&para;</a></h4>
 <p>There are several limitations on the Frequencies that can be selected:</p>
 <ul>
 <li>The selected frequency should be within the band supported by the hardware (RAN650/RAN550) used. </li>
-<li>The selected frequency must be devisable by 3.84</li>
+<li>The selected frequency must be divisible by 3.84</li>
 <li>Subcarrier Spacing = 30KHz</li>
-<li>Bandwidth = 40MHz</li>
+<li>Bandwidth = 40MHz or 100MHz</li>
 <li>The K_ssb must be 0</li>
 <li>The offset to point A must be 6</li>
 </ul>
 <p>Let's proceed with an example:</p>
-<p>To set a center frequency of 3750 MHz, this is not devisable by 3.84, the nearest frequencies that meet this condition are 3747.84MHz (976<em>3.84) 3751.68MHz (977</em>3.84) so let's consider first 3747,84 MHz and verify the conditions on the K_ssb and Offset to Point A with this online tool (link at:  (https://www.sqimway.com/nr_refA.php) ) </p>
+<p>To set a center frequency of 3750 MHz, this is not divisible by 3.84, the nearest frequencies that meet this condition are 3747.84MHz (976<em>3.84) 3751.68MHz (977</em>3.84) so let's consider first 3747,84 MHz and verify the conditions on the K_ssb and Offset to Point A with this online tool (link at:  (https://www.sqimway.com/nr_refA.php) ).</p>
 <ul>
 <li>On the tool set the Band to 78, SCS to 30KHz, the Bandwidth to 40MHz and the ARFCN of the center frequency 3747,84 which is 649856 and when we hit the <strong>RUN</strong> button we obtain:</li>
 </ul>
@@ -506,7 +608,7 @@
   <img width="600" height="800" src="Freq3747dot84.png">
 </p>
 
-<p>This Frequency, however does not meet the <strong>GSCN Synchronisation requirements</strong> as in fact the Offset to Point A of the first channel is 2 and the K_ssb is 16, this will cause the UE to listen on the wrong channel so the SIBs will never be seen and therefore the cell is "invisible"</p>
+<p>This Frequency, however does not meet the <strong>GSCN Synchronisation requirements</strong> as in fact the Offset to Point A of the first channel is 2 and the K_ssb is 16, this will cause the UE to listen on the wrong channel so the SIBs will never be seen and therefore the cell is "invisible".</p>
 <ul>
 <li>We then repeat the exercise with the higher center frequency 3751.68MHz, which yelds a center frequency ARFCN of 650112 and a point A ARFCN of 648840 and giving another run we will see that now the K_ssb and the Offset to Point A are correct.</li>
 </ul>
@@ -524,43 +626,6 @@
   <img src="Changing_Frequency.png">
 </p>
 
-<p><strong>Apply below on the RU, only when using system release 2022.4.0</strong></p>
-<ul>
-<li>Create a file change_freq.sh with below content in the RU
-<div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash</span>
-<span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span>-z<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$1</span><span class="s2">&quot;</span><span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
-<span class="w">  </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Please provide frequency in MHz in with the format XXXX.XXX as an argument&quot;</span>
-<span class="w">  </span><span class="nb">exit</span><span class="w"> </span><span class="m">1</span>
-<span class="k">fi</span>
-registercontrol<span class="w"> </span>-w<span class="w"> </span>0xC036B<span class="w"> </span>-x<span class="w"> </span>0x88000088
-eeprog_cp60<span class="w"> </span>-f<span class="w"> </span>-x<span class="w"> </span>-16<span class="w"> </span>/dev/i2c-0<span class="w"> </span>0x57<span class="w"> </span>-w<span class="w"> </span>0x174:0x01:0x3<span class="k">$(</span><span class="nb">echo</span><span class="w"> </span><span class="nv">$1</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>cut<span class="w"> </span>-c1<span class="k">)</span>
-eeprog_cp60<span class="w"> </span>-f<span class="w"> </span>-x<span class="w"> </span>-16<span class="w"> </span>/dev/i2c-0<span class="w"> </span>0x57<span class="w"> </span>-w<span class="w"> </span>0x175:0x01:0x3<span class="k">$(</span><span class="nb">echo</span><span class="w"> </span><span class="nv">$1</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>cut<span class="w"> </span>-c2<span class="k">)</span>
-eeprog_cp60<span class="w"> </span>-f<span class="w"> </span>-x<span class="w"> </span>-16<span class="w"> </span>/dev/i2c-0<span class="w"> </span>0x57<span class="w"> </span>-w<span class="w"> </span>0x176:0x01:0x3<span class="k">$(</span><span class="nb">echo</span><span class="w"> </span><span class="nv">$1</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>cut<span class="w"> </span>-c3<span class="k">)</span>
-eeprog_cp60<span class="w"> </span>-f<span class="w"> </span>-x<span class="w"> </span>-16<span class="w"> </span>/dev/i2c-0<span class="w"> </span>0x57<span class="w"> </span>-w<span class="w"> </span>0x177:0x01:0x3<span class="k">$(</span><span class="nb">echo</span><span class="w"> </span><span class="nv">$1</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>cut<span class="w"> </span>-c4<span class="k">)</span>
-eeprog_cp60<span class="w"> </span>-f<span class="w"> </span>-x<span class="w"> </span>-16<span class="w"> </span>/dev/i2c-0<span class="w"> </span>0x57<span class="w"> </span>-w<span class="w"> </span>0x178:0x01:0x2E
-eeprog_cp60<span class="w"> </span>-f<span class="w"> </span>-x<span class="w"> </span>-16<span class="w"> </span>/dev/i2c-0<span class="w"> </span>0x57<span class="w"> </span>-w<span class="w"> </span>0x179:0x01:0x3<span class="k">$(</span><span class="nb">echo</span><span class="w"> </span><span class="nv">$1</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>cut<span class="w"> </span>-c6<span class="k">)</span>
-eeprog_cp60<span class="w"> </span>-f<span class="w"> </span>-x<span class="w"> </span>-16<span class="w"> </span>/dev/i2c-0<span class="w"> </span>0x57<span class="w"> </span>-w<span class="w"> </span>0x17A:0x01:0x3<span class="k">$(</span><span class="nb">echo</span><span class="w"> </span><span class="nv">$1</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>cut<span class="w"> </span>-c7<span class="k">)</span>
-eeprog_cp60<span class="w"> </span>-f<span class="w"> </span>-x<span class="w"> </span>-16<span class="w"> </span>/dev/i2c-0<span class="w"> </span>0x57<span class="w"> </span>-w<span class="w"> </span>0x17B:0x01:0x3<span class="k">$(</span><span class="nb">echo</span><span class="w"> </span><span class="nv">$1</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>cut<span class="w"> </span>-c8<span class="k">)</span><span class="w">                    </span>
-eeprog_cp60<span class="w"> </span>-f<span class="w"> </span>-x<span class="w"> </span>-16<span class="w"> </span>/dev/i2c-0<span class="w"> </span>0x57<span class="w"> </span>-w<span class="w"> </span>0x17C:0x01:0x3<span class="k">$(</span><span class="nb">echo</span><span class="w"> </span><span class="nv">$1</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>cut<span class="w"> </span>-c1<span class="k">)</span>
-eeprog_cp60<span class="w"> </span>-f<span class="w"> </span>-x<span class="w"> </span>-16<span class="w"> </span>/dev/i2c-0<span class="w"> </span>0x57<span class="w"> </span>-w<span class="w"> </span>0x17D:0x01:0x3<span class="k">$(</span><span class="nb">echo</span><span class="w"> </span><span class="nv">$1</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>cut<span class="w"> </span>-c2<span class="k">)</span>
-eeprog_cp60<span class="w"> </span>-f<span class="w"> </span>-x<span class="w"> </span>-16<span class="w"> </span>/dev/i2c-0<span class="w"> </span>0x57<span class="w"> </span>-w<span class="w"> </span>0x17E:0x01:0x3<span class="k">$(</span><span class="nb">echo</span><span class="w"> </span><span class="nv">$1</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>cut<span class="w"> </span>-c3<span class="k">)</span>
-eeprog_cp60<span class="w"> </span>-f<span class="w"> </span>-x<span class="w"> </span>-16<span class="w"> </span>/dev/i2c-0<span class="w"> </span>0x57<span class="w"> </span>-w<span class="w"> </span>0x17F:0x01:0x3<span class="k">$(</span><span class="nb">echo</span><span class="w"> </span><span class="nv">$1</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>cut<span class="w"> </span>-c4<span class="k">)</span>
-eeprog_cp60<span class="w"> </span>-f<span class="w"> </span>-x<span class="w"> </span>-16<span class="w"> </span>/dev/i2c-0<span class="w"> </span>0x57<span class="w"> </span>-w<span class="w"> </span>0x180:0x01:0x2E
-eeprog_cp60<span class="w"> </span>-f<span class="w"> </span>-x<span class="w"> </span>-16<span class="w"> </span>/dev/i2c-0<span class="w"> </span>0x57<span class="w"> </span>-w<span class="w"> </span>0x181:0x01:0x3<span class="k">$(</span><span class="nb">echo</span><span class="w"> </span><span class="nv">$1</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>cut<span class="w"> </span>-c6<span class="k">)</span>
-eeprog_cp60<span class="w"> </span>-f<span class="w"> </span>-x<span class="w"> </span>-16<span class="w"> </span>/dev/i2c-0<span class="w"> </span>0x57<span class="w"> </span>-w<span class="w"> </span>0x182:0x01:0x3<span class="k">$(</span><span class="nb">echo</span><span class="w"> </span><span class="nv">$1</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>cut<span class="w"> </span>-c7<span class="k">)</span>
-eeprog_cp60<span class="w"> </span>-f<span class="w"> </span>-x<span class="w"> </span>-16<span class="w"> </span>/dev/i2c-0<span class="w"> </span>0x57<span class="w"> </span>-w<span class="w"> </span>0x183:0x01:0x3<span class="k">$(</span><span class="nb">echo</span><span class="w"> </span><span class="nv">$1</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>cut<span class="w"> </span>-c8<span class="k">)</span>
-registercontrol<span class="w"> </span>-w<span class="w"> </span>0xC036B<span class="w"> </span>-x<span class="w"> </span>0x88000488
-</code></pre></div></li>
-<li>For our example where the center frequency required is 3751.68MHz, run the script by:
-<div class="highlight"><pre><span></span><code>./change_freq.sh 3751.680
-</code></pre></div></li>
-<li>To validate the command is successful run below:
-<div class="highlight"><pre><span></span><code>eeprog_cp60<span class="w"> </span>-q<span class="w"> </span>-f<span class="w"> </span>-16<span class="w"> </span>/dev/i2c-0<span class="w"> </span>0x57<span class="w"> </span>-r<span class="w"> </span><span class="m">372</span>:8
-</code></pre></div></li>
-<li>reboot RU
-<div class="highlight"><pre><span></span><code>reboot
-</code></pre></div></li>
-</ul>
 <h3 id="12-configuring-cell-tx-power">1.2. Configuring Cell TX Power<a class="headerlink" href="#12-configuring-cell-tx-power" title="Permanent link">&para;</a></h3>
 <p>By default RAN650 is configured with 35dBm and RAN550 is configured with 25dBm.</p>
 <p>(Through the cell wrapper)</p>
@@ -574,33 +639,8 @@ registercontrol<span class="w"> </span>-w<span class="w"> </span>0xC036B<span cl
   <img src="Changing_Power.png">
 </p>
 
-<p><strong>Apply below on the RU, only when using system release 2022.4.0</strong></p>
-<ul>
-<li>To adjust the power of the RU the attenuation settings on the RU would need to be changed: To increase the power the attenuation must be reduced and to decreasing the power, the attenuation must be increased.</li>
-<li>Important: The the current attenuation values on the RU must be saved as they are unit specific and used to make sure that the unit is transmitting on the needed power. (Please note these are in mdB)
-For ANT1: <code>eeprog_cp60 -q -f -16 /dev/i2c-0 0x57 -r 780:5</code>
-For ANT3: <code>eeprog_cp60 -q -f -16 /dev/i2c-0 0x57 -r 1060:5</code></li>
-<li>Assuming as an example the RAN650 unit had for ANT1 16000 anf for ANT3 15730 and we want to reduce the output power by 10dB.</li>
-<li>Then the new attenuation values for ANT1 and ANT3 must be 26000 and 25730 respectivily.</li>
-<li>Modify the below script with the last digit of each value and run it on the RU.
-<div class="highlight"><pre><span></span><code>registercontrol<span class="w"> </span>-w<span class="w"> </span>0xC036B<span class="w"> </span>-x<span class="w"> </span>0x88000088
-<span class="c1">#ANT1</span>
-eeprog_cp60<span class="w"> </span>-f<span class="w"> </span>-x<span class="w"> </span>-16<span class="w"> </span>/dev/i2c-0<span class="w"> </span>0x57<span class="w"> </span>-w<span class="w"> </span>0x30C:0x01:0x32
-eeprog_cp60<span class="w"> </span>-f<span class="w"> </span>-x<span class="w"> </span>-16<span class="w"> </span>/dev/i2c-0<span class="w"> </span>0x57<span class="w"> </span>-w<span class="w"> </span>0x30D:0x01:0x36
-eeprog_cp60<span class="w"> </span>-f<span class="w"> </span>-x<span class="w"> </span>-16<span class="w"> </span>/dev/i2c-0<span class="w"> </span>0x57<span class="w"> </span>-w<span class="w"> </span>0x30E:0x01:0x30
-eeprog_cp60<span class="w"> </span>-f<span class="w"> </span>-x<span class="w"> </span>-16<span class="w"> </span>/dev/i2c-0<span class="w"> </span>0x57<span class="w"> </span>-w<span class="w"> </span>0x30F:0x01:0x30
-eeprog_cp60<span class="w"> </span>-f<span class="w"> </span>-x<span class="w"> </span>-16<span class="w"> </span>/dev/i2c-0<span class="w"> </span>0x57<span class="w"> </span>-w<span class="w"> </span>0x311:0x01:0x30
-<span class="c1">#ANT3</span>
-eeprog_cp60<span class="w"> </span>-f<span class="w"> </span>-x<span class="w"> </span>-16<span class="w"> </span>/dev/i2c-0<span class="w"> </span>0x57<span class="w"> </span>-w<span class="w"> </span>0x424:0x01:0x32
-eeprog_cp60<span class="w"> </span>-f<span class="w"> </span>-x<span class="w"> </span>-16<span class="w"> </span>/dev/i2c-0<span class="w"> </span>0x57<span class="w"> </span>-w<span class="w"> </span>0x425:0x01:0x35
-eeprog_cp60<span class="w"> </span>-f<span class="w"> </span>-x<span class="w"> </span>-16<span class="w"> </span>/dev/i2c-0<span class="w"> </span>0x57<span class="w"> </span>-w<span class="w"> </span>0x426:0x01:0x37
-eeprog_cp60<span class="w"> </span>-f<span class="w"> </span>-x<span class="w"> </span>-16<span class="w"> </span>/dev/i2c-0<span class="w"> </span>0x57<span class="w"> </span>-w<span class="w"> </span>0x427:0x01:0x33
-eeprog_cp60<span class="w"> </span>-f<span class="w"> </span>-x<span class="w"> </span>-16<span class="w"> </span>/dev/i2c-0<span class="w"> </span>0x57<span class="w"> </span>-w<span class="w"> </span>0x428:0x01:0x30
-registercontrol<span class="w"> </span>-w<span class="w"> </span>0xC036B<span class="w"> </span>-x<span class="w"> </span>0x88000488
-</code></pre></div></li>
-</ul>
 <h2 id="2-checking-ru-status">2. Checking RU Status<a class="headerlink" href="#2-checking-ru-status" title="Permanent link">&para;</a></h2>
-<p>After applying actions on the RU to change the frequency or the power. A reboot of the RU would be necessary and will be applied via the cell wrapper when clicking <strong>submit</strong> on when configuring the cell parameters. (Unless advanced settings was toggled and reboot RU was unchecked).</p>
+<p>After applying actions on the RU to change the frequency or the power. A reboot of the RU is necessary and will be applied via the cell wrapper when clicking <strong>submit</strong>.</p>
 <p>Below are some useful checks to confirm the status of the RU after the reboot.</p>
 <ul>
 <li>The RU Synchrnoization status can be checked by running below command on the RU.</li>
@@ -610,74 +650,47 @@ registercontrol<span class="w"> </span>-w<span class="w"> </span>0xC036B<span cl
 <li>The RAN650 or RAN550 units usually take from 4~6 mins to boot up after a power cycle. The status of the RU boot up will be printed in a file during boot up. It can be checked by: </li>
 </ul>
 <p><code>tail -F /tmp/logs/radio_status</code></p>
-                
-              
-              
-                
 
 
-              
-            </article>
-          </div>
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
         </div>
         
-          <a href="#" class="md-top md-icon" data-md-component="top" data-md-state="hidden">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"/></svg>
-            Back to top
-          </a>
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+  Back to top
+</button>
         
       </main>
       
-        
-<footer class="md-footer">
-  
-    <nav class="md-footer__inner md-grid" aria-label="Footer">
-      
-        
-        <a href="../cu-configuration/" class="md-footer__link md-footer__link--prev" aria-label="Previous: CU Configuration" rel="prev">
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
-          </div>
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                Previous
-              </span>
-              CU Configuration
-            </div>
-          </div>
-        </a>
-      
-      
-        
-        <a href="../handover-configuration/" class="md-footer__link md-footer__link--next" aria-label="Next: Handover Configuration" rel="next">
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                Next
-              </span>
-              Handover Configuration
-            </div>
-          </div>
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
-          </div>
-        </a>
-      
-    </nav>
+        <footer class="md-footer">
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
-      <div class="md-footer-copyright">
-        
-        
-          Made with
-          <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
-            Material for MkDocs
-          </a>
-        
-        
-      </div>
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
       
     </div>
   </div>
@@ -687,10 +700,12 @@ registercontrol<span class="w"> </span>-w<span class="w"> </span>0xC036B<span cl
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.instant", "navigation.tracking", "navigation.expand", "navigation.top", "navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "toc.integrate"], "search": "../assets/javascripts/workers/search.fcfe8b6d.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "version": {"provider": "mike"}}</script>
     
     
-      <script src="../assets/javascripts/bundle.b1047164.min.js"></script>
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.instant", "navigation.tracking", "navigation.expand", "navigation.top", "navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "toc.integrate"], "search": "../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"provider": "mike"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.d7c377c4.min.js"></script>
       
     
   </body>
