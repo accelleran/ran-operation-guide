@@ -1,5 +1,5 @@
 
-# Operational User Guide 
+# Operational User Guide
 
 ## 1. Introduction
 
@@ -18,15 +18,15 @@ This system release contains
 
 | component    | version                        |
 |--------------|--------------------------------|
-| RIC          | 6.5.2                          |
-| CU CHART     | 6.0.0                          |
-| CU APP       | R4.2.3_jupiler                 |
-| DU           | 2023-05-08-q1-patch-release-01 |
-| L1           | 8.7.4                          |
+| RIC          | 7.0.0                          |
+| CU CHART     | 7.0.0                          |
+| CU APP       | R4.3.12_leffe                 |
+| cell wrapper config | 0.2.4                          |
+| Effnet-DU           | 2024-01-31-q3-patch-release-01-8.7.4 |
+| Phluido-UL1           | 8.7.4                          |
 | BNTL650      | 0.7.0                          |
-| BNTL550      | 0.5.2/0.6.0                    |
-| cell wrapper | 2.3.0                          |
-| DU/RU        | 5.1.0.30736                    |
+| BNTL550      | 0.7.1                    |
+| NodeH-DU/RU        | 5.2.0.32092                    |
 
 ## 3. Dashboard
 
@@ -51,15 +51,8 @@ The DRAX dashboard also uses grafana to view measurements and counters.
         - UE Measured SINR
         - DL Throughput on the NG-Interface per UE.
         - UL Throughput on the NG-Interface per UE.
-    - Accessibility and Mobility Counters (e.g. Number of RRC Attempts or Number of Handover Execution Successes) can be viewed in the **5G PM Counters** dashboard. The dashboard includes:
-        - RRC Connection Attempts and sub-counters for each of the connection attempt cause (MO Signalling, MO Data, ... etc)
-        - RRC Connection Successes and sub-counters for each of the connection success causes (MO Signalling, MO Data, ... etc)
-        - PDU Session Setup Requests.
-        - PDU Session Setup Failures.
-        - Intra-gNB Handover Execution Attempts.
-        - Intra-gNB Handover Execution Successes.
-        - Mean and Max Number of RRC Connections.
-        > PS: The definition of these counters are included in 3GPP TS 28.552 .
+    - Accessibility and Mobility Counters (e.g. Number of RRC Attempts or Number of Handover Execution Successes) can be viewed in the **5G PM Counters** dashboard. 
+    > PS: The definition of these counters are included in 3GPP TS 28.552 .
     - A live view of the RIC/CU/CellWrapper Logs can be viewed using the **Loki Log Dashboard**.
 
 Example **5G UE Monitoring** report:
@@ -88,7 +81,6 @@ Below sections will give more information on how to change some of the RAN param
 * [RU/DU Configuraiton](modifying-ran650-or-ran550/index.md)
 * [Handover Configuration](handover-configuration/index.md)
 * [MOCN and Slicing](mocn-and-slicing/index.md)
-* [Split 2 RU/DU Configuration](nodeh-du-ru-operation/index.md)
 * [Logs Collection](logs-collection/index.md)
 
 

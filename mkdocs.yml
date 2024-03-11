@@ -1,4 +1,4 @@
-site_name: Accelleran 5G O-RAN System - 2023.2.0 release
+site_name: Accelleran 5G O-RAN System Operational Guide [2023.3.0]
 
 site_url: https://accelleran.github.io/ran-operation-guide/
 theme: 
@@ -41,5 +41,4 @@ nav:
     - 'modifying-ran650-or-ran550/index.md'
     - 'handover-configuration/index.md'
     - 'mocn-and-slicing/index.md'
-    - 'nodeh-du-ru-operation/index.md'
     - 'logs-collection/index.md'
