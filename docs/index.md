@@ -5,20 +5,16 @@
 
 This guide describes how to operate the Accelleran ORAN 5G  Platform and the different network components (RIC, CU, DU and L1). The scope of this document is therefore to cover only the operational aspects of the platform, including the basic configuration and examples of some test cases. 
 
-This means that the installation and initial configuration of the System has been already made by Accelleran Customer Support and there is no need to worry about how to prepare the server, install and initialise the components.
-
-2023.2.0 release includes Accelleran Cell Wrapper, which works as a layer on top of the DU and RU. This provides a common interface for configuration and control over a cell. 
-
-It monitors a DU and RU through periodic health checks and uses the control interface internally to attempt an automatic repair from failures. These health checks include checks for reachability of the servers, traffic thresholds, status of the applications and checks on a set of log messages. 
+This means that the installation and initial configuration of the System has been already made by Accelleran Customer Support and there is no need to worry about how to prepare the server, install and initialise the components. 
 
 
 ## 2. Releases
-This document is released together with the system release 2023.2.0. 
+This document is released together with the system release 2023.3.0. 
 This system release contains 
 
 | component    | version                        |
 |--------------|--------------------------------|
-| RIC          | 7.0.0                          |
+| DRAX/RIC          | 7.0.0                          |
 | CU CHART     | 7.0.0                          |
 | CU APP       | R4.3.12_leffe                 |
 | cell wrapper config | 0.2.4                          |
@@ -30,7 +26,7 @@ This system release contains
 
 ## 3. Dashboard
 
-The dashboard can be accessed via ```https://"RIC_CU_VM_IP":31315```
+The dashboard can be accessed via ```https://"DRAX_VM_IP":31315```
 
 ### 3.1. Cell Monitoring
 From the **Home** tab the cell status can be monitored and the UEs attached to it.
@@ -51,7 +47,7 @@ The DRAX dashboard also uses grafana to view measurements and counters.
         - UE Measured SINR
         - DL Throughput on the NG-Interface per UE.
         - UL Throughput on the NG-Interface per UE.
-    - Accessibility and Mobility Counters (e.g. Number of RRC Attempts or Number of Handover Execution Successes) can be viewed in the **5G PM Counters** dashboard. 
+    - Accessibility and Mobility Counters (e.g. Number of RRC Attempts or Number of Handover Execution Successes) can be viewed in the *5G CUCP PM Counters* dashboard.
     > PS: The definition of these counters are included in 3GPP TS 28.552 .
     - A live view of the RIC/CU/CellWrapper Logs can be viewed using the **Loki Log Dashboard**.
 
