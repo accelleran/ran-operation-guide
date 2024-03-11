@@ -5,12 +5,10 @@
 
 This guide describes how to operate the Accelleran ORAN 5G  Platform and the different network components (RIC, CU, DU and L1). The scope of this document is therefore to cover only the operational aspects of the platform, including the basic configuration and examples of some test cases. 
 
-This means that the installation and initial configuration of the System has been already made by Accelleran Customer Support and there is no need to worry about how to prepare the server, install and initialise the components. 
-
 
 ## 2. Releases
 This document is released together with the system release 2023.3.0. 
-This system release contains 
+The release contains:
 
 | component    | version                        |
 |--------------|--------------------------------|
@@ -47,7 +45,7 @@ The DRAX dashboard also uses grafana to view measurements and counters.
         - UE Measured SINR
         - DL Throughput on the NG-Interface per UE.
         - UL Throughput on the NG-Interface per UE.
-    - Accessibility and Mobility Counters (e.g. Number of RRC Attempts or Number of Handover Execution Successes) can be viewed in the *5G CUCP PM Counters* dashboard.
+    - Accessibility and Mobility Counters (e.g. Number of RRC Attempts or Number of Handover Execution Successes) can be viewed in the **5G CUCP PM Counters** dashboard.
     > PS: The definition of these counters are included in 3GPP TS 28.552 .
     - A live view of the RIC/CU/CellWrapper Logs can be viewed using the **Loki Log Dashboard**.
 
