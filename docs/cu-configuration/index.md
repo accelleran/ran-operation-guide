@@ -40,3 +40,8 @@ The 5G CU-UP has a number of configuration parameters as seen below:
 </p>
 
 **IMPORTANT**  Do not attempt to modify slices and PLMNs unless you are aware of the target Scenario you want to achieve: slice configuration and multiple PLMN (MOCN) configurations are rather complex to handle and require that CU, DU and Core are configured coherently in order for such scenarios to be functional. We recommend to consult the relative sections of this document and contact your Core Network Supplier and Accelleran to tailor a solution for your specific case. 
+
+## 3. Extra Info
+
+- As explained all CU-CP or CU-UP parameters would require to set the admin state to locked before submitting.
+- But using the API calls, some of parameters would take effect immediately without a need to restart the CU-CP (e.g. modifications on the neighbor relation configuration)

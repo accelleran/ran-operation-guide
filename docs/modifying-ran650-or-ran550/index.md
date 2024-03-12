@@ -76,3 +76,25 @@ Below are some useful checks to confirm the status of the RU after the reboot.
 - The RAN650 or RAN550 units usually take from 4~6 mins to boot up after a power cycle. The status of the RU boot up will be printed in a file during boot up. It can be checked by: 
 
 ```tail -F /tmp/logs/radio_status```
+
+
+## 3. Extra Info
+
+- When submitting the config, the `advanced settings` toggele on the configuration confirmation pop up message can be used to not restart the DU, RU or both.
+
+> PS: As explained above, for the Frequency change for example an RU and DU restart would be needed.
+
+- Below table have details on these parameters to take effect:
+
+| Parameter         | Need DU Restart       | Need RU Restart   |
+| ---               | ---                   | ---               |
+| CELL_ID           | True                  | ***False****             | 
+| TAC               | True                  | ***False***             | 
+| PCI               | True                  | ***False***             | 
+| Frequency Band    | True                  | ***False***             | 
+| DL ARFCN          | True                  | True              | 
+| DL Bandwidth      | True                  | True              | 
+| Max EIRP          | ***False***                  | ***False***              | 
+| PLMN_ID and Slice Config | True                  | ***False***             | 
+
+> Note: Except for the Max EIRP (RU TX Power) all cell parameters would require at least the DU to restart to take effect.
