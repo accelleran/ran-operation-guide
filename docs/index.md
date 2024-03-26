@@ -1,36 +1,30 @@
 
-# Operational User Guide 
+# Operational User Guide
 
 ## 1. Introduction
 
 This guide describes how to operate the Accelleran ORAN 5G  Platform and the different network components (RIC, CU, DU and L1). The scope of this document is therefore to cover only the operational aspects of the platform, including the basic configuration and examples of some test cases. 
 
-This means that the installation and initial configuration of the System has been already made by Accelleran Customer Support and there is no need to worry about how to prepare the server, install and initialise the components.
-
-2023.2.0 release includes Accelleran Cell Wrapper, which works as a layer on top of the DU and RU. This provides a common interface for configuration and control over a cell. 
-
-It monitors a DU and RU through periodic health checks and uses the control interface internally to attempt an automatic repair from failures. These health checks include checks for reachability of the servers, traffic thresholds, status of the applications and checks on a set of log messages. 
-
 
 ## 2. Releases
-This document is released together with the system release 2023.2.0. 
-This system release contains 
+This document is released together with the system release 2023.3.0. 
+The release contains:
 
 | component    | version                        |
 |--------------|--------------------------------|
-| RIC          | 6.5.2                          |
-| CU CHART     | 6.0.0                          |
-| CU APP       | R4.2.3_jupiler                 |
-| DU           | 2023-05-08-q1-patch-release-01 |
-| L1           | 8.7.4                          |
+| DRAX/RIC          | 7.0.0                          |
+| CU CHART     | 7.0.0                          |
+| CU APP       | R4.3.12_leffe                 |
+| cell wrapper config | 0.2.4                          |
+| Effnet-DU           | 2024-01-31-q3-patch-release-01-8.7.4 |
+| Phluido-UL1           | 8.7.4                          |
 | BNTL650      | 0.7.0                          |
-| BNTL550      | 0.5.2/0.6.0                    |
-| cell wrapper | 2.3.0                          |
-| DU/RU        | 5.1.0.30736                    |
+| BNTL550      | 0.7.1                    |
+| NodeH-DU/RU        | 5.2.0.32092                    |
 
 ## 3. Dashboard
 
-The dashboard can be accessed via ```https://"RIC_CU_VM_IP":31315```
+The dashboard can be accessed via ```https://"DRAX_VM_IP":31315```
 
 ### 3.1. Cell Monitoring
 From the **Home** tab the cell status can be monitored and the UEs attached to it.
@@ -51,15 +45,8 @@ The DRAX dashboard also uses grafana to view measurements and counters.
         - UE Measured SINR
         - DL Throughput on the NG-Interface per UE.
         - UL Throughput on the NG-Interface per UE.
-    - Accessibility and Mobility Counters (e.g. Number of RRC Attempts or Number of Handover Execution Successes) can be viewed in the **5G PM Counters** dashboard. The dashboard includes:
-        - RRC Connection Attempts and sub-counters for each of the connection attempt cause (MO Signalling, MO Data, ... etc)
-        - RRC Connection Successes and sub-counters for each of the connection success causes (MO Signalling, MO Data, ... etc)
-        - PDU Session Setup Requests.
-        - PDU Session Setup Failures.
-        - Intra-gNB Handover Execution Attempts.
-        - Intra-gNB Handover Execution Successes.
-        - Mean and Max Number of RRC Connections.
-        > PS: The definition of these counters are included in 3GPP TS 28.552 .
+    - Accessibility and Mobility Counters (e.g. Number of RRC Attempts or Number of Handover Execution Successes) can be viewed in the **5G CUCP PM Counters** dashboard.
+    > PS: The definition of these counters are included in 3GPP TS 28.552 .
     - A live view of the RIC/CU/CellWrapper Logs can be viewed using the **Loki Log Dashboard**.
 
 Example **5G UE Monitoring** report:
@@ -88,7 +75,6 @@ Below sections will give more information on how to change some of the RAN param
 * [RU/DU Configuraiton](modifying-ran650-or-ran550/index.md)
 * [Handover Configuration](handover-configuration/index.md)
 * [MOCN and Slicing](mocn-and-slicing/index.md)
-* [Split 2 RU/DU Configuration](nodeh-du-ru-operation/index.md)
 * [Logs Collection](logs-collection/index.md)
 
 
