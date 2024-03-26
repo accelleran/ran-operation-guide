@@ -11,10 +11,6 @@
         <link rel="canonical" href="https://accelleran.github.io/ran-operation-guide/nodeh-du-ru-operation/">
       
       
-        <link rel="prev" href="../mocn-and-slicing/">
-      
-      
-        <link rel="next" href="../logs-collection/">
       
       
       <link rel="icon" href="../images/accelleran_favicon.png">
@@ -22,7 +18,7 @@
     
     
       
-        <title>Split 2 Cell Operation - Accelleran 5G O-RAN System - 2023.2.0 release</title>
+        <title>Split 2 Cell Operation - Accelleran 5G O-RAN System Operational Guide [2023.3.0]</title>
       
     
     
@@ -86,7 +82,7 @@
 
 <header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href=".." title="Accelleran 5G O-RAN System - 2023.2.0 release" class="md-header__button md-logo" aria-label="Accelleran 5G O-RAN System - 2023.2.0 release" data-md-component="logo">
+    <a href=".." title="Accelleran 5G O-RAN System Operational Guide [2023.3.0]" class="md-header__button md-logo" aria-label="Accelleran 5G O-RAN System Operational Guide [2023.3.0]" data-md-component="logo">
       
   <img src="../images/accelleran_logo.png" alt="logo">
 
@@ -99,7 +95,7 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            Accelleran 5G O-RAN System - 2023.2.0 release
+            Accelleran 5G O-RAN System Operational Guide [2023.3.0]
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
@@ -251,25 +247,6 @@
         
   
   
-    
-  
-  
-    <li class="md-tabs__item md-tabs__item--active">
-      <a href="./" class="md-tabs__link">
-        
-  
-    
-  
-  Split 2 Cell Operation
-
-      </a>
-    </li>
-  
-
-      
-        
-  
-  
   
     <li class="md-tabs__item">
       <a href="../logs-collection/" class="md-tabs__link">
@@ -314,12 +291,12 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href=".." title="Accelleran 5G O-RAN System - 2023.2.0 release" class="md-nav__button md-logo" aria-label="Accelleran 5G O-RAN System - 2023.2.0 release" data-md-component="logo">
+    <a href=".." title="Accelleran 5G O-RAN System Operational Guide [2023.3.0]" class="md-nav__button md-logo" aria-label="Accelleran 5G O-RAN System Operational Guide [2023.3.0]" data-md-component="logo">
       
   <img src="../images/accelleran_logo.png" alt="logo">
 
     </a>
-    Accelleran 5G O-RAN System - 2023.2.0 release
+    Accelleran 5G O-RAN System Operational Guide [2023.3.0]
   </label>
   
   <ul class="md-nav__list" data-md-scrollfix>
@@ -420,126 +397,6 @@
   
 
       </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-    
-  
-  
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    Split 2 Cell Operation
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
-        
-  
-  <span class="md-ellipsis">
-    Split 2 Cell Operation
-  </span>
-  
-
-      </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#1-startstop-cell" class="md-nav__link">
-    <span class="md-ellipsis">
-      1. Start/Stop Cell
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#2-simple-cell-configuration" class="md-nav__link">
-    <span class="md-ellipsis">
-      2. Simple Cell Configuration
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="2. Simple Cell Configuration">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#21-frequency-modification" class="md-nav__link">
-    <span class="md-ellipsis">
-      2.1. Frequency Modification
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#22-bandwidth-modification" class="md-nav__link">
-    <span class="md-ellipsis">
-      2.2. Bandwidth Modification
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#23-ru-synchrnoization-source" class="md-nav__link">
-    <span class="md-ellipsis">
-      2.3. RU Synchrnoization Source
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#24-tx-power" class="md-nav__link">
-    <span class="md-ellipsis">
-      2.4. TX Power
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 

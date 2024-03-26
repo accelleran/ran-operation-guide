@@ -20,7 +20,7 @@
     
     
       
-        <title>Accelleran 5G O-RAN System - 2023.2.0 release</title>
+        <title>Accelleran 5G O-RAN System Operational Guide [2023.3.0]</title>
       
     
     
@@ -84,7 +84,7 @@
 
 <header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="." title="Accelleran 5G O-RAN System - 2023.2.0 release" class="md-header__button md-logo" aria-label="Accelleran 5G O-RAN System - 2023.2.0 release" data-md-component="logo">
+    <a href="." title="Accelleran 5G O-RAN System Operational Guide [2023.3.0]" class="md-header__button md-logo" aria-label="Accelleran 5G O-RAN System Operational Guide [2023.3.0]" data-md-component="logo">
       
   <img src="images/accelleran_logo.png" alt="logo">
 
@@ -97,7 +97,7 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            Accelleran 5G O-RAN System - 2023.2.0 release
+            Accelleran 5G O-RAN System Operational Guide [2023.3.0]
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
@@ -253,23 +253,6 @@
   
   
     <li class="md-tabs__item">
-      <a href="nodeh-du-ru-operation/" class="md-tabs__link">
-        
-  
-    
-  
-  Split 2 Cell Operation
-
-      </a>
-    </li>
-  
-
-      
-        
-  
-  
-  
-    <li class="md-tabs__item">
       <a href="logs-collection/" class="md-tabs__link">
         
   
@@ -312,12 +295,12 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="." title="Accelleran 5G O-RAN System - 2023.2.0 release" class="md-nav__button md-logo" aria-label="Accelleran 5G O-RAN System - 2023.2.0 release" data-md-component="logo">
+    <a href="." title="Accelleran 5G O-RAN System Operational Guide [2023.3.0]" class="md-nav__button md-logo" aria-label="Accelleran 5G O-RAN System Operational Guide [2023.3.0]" data-md-component="logo">
       
   <img src="images/accelleran_logo.png" alt="logo">
 
     </a>
-    Accelleran 5G O-RAN System - 2023.2.0 release
+    Accelleran 5G O-RAN System Operational Guide [2023.3.0]
   </label>
   
   <ul class="md-nav__list" data-md-scrollfix>
@@ -538,26 +521,6 @@
   
   
     <li class="md-nav__item">
-      <a href="nodeh-du-ru-operation/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Split 2 Cell Operation
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="logs-collection/" class="md-nav__link">
         
   
@@ -589,12 +552,9 @@
 <h1 id="operational-user-guide">Operational User Guide<a class="headerlink" href="#operational-user-guide" title="Permanent link">&para;</a></h1>
 <h2 id="1-introduction">1. Introduction<a class="headerlink" href="#1-introduction" title="Permanent link">&para;</a></h2>
 <p>This guide describes how to operate the Accelleran ORAN 5G  Platform and the different network components (RIC, CU, DU and L1). The scope of this document is therefore to cover only the operational aspects of the platform, including the basic configuration and examples of some test cases. </p>
-<p>This means that the installation and initial configuration of the System has been already made by Accelleran Customer Support and there is no need to worry about how to prepare the server, install and initialise the components.</p>
-<p>2023.2.0 release includes Accelleran Cell Wrapper, which works as a layer on top of the DU and RU. This provides a common interface for configuration and control over a cell. </p>
-<p>It monitors a DU and RU through periodic health checks and uses the control interface internally to attempt an automatic repair from failures. These health checks include checks for reachability of the servers, traffic thresholds, status of the applications and checks on a set of log messages. </p>
 <h2 id="2-releases">2. Releases<a class="headerlink" href="#2-releases" title="Permanent link">&para;</a></h2>
-<p>This document is released together with the system release 2023.2.0. 
-This system release contains </p>
+<p>This document is released together with the system release 2023.3.0. 
+The release contains:</p>
 <table>
 <thead>
 <tr>
@@ -604,23 +564,27 @@ This system release contains </p>
 </thead>
 <tbody>
 <tr>
-<td>RIC</td>
-<td>6.5.2</td>
+<td>DRAX/RIC</td>
+<td>7.0.0</td>
 </tr>
 <tr>
 <td>CU CHART</td>
-<td>6.0.0</td>
+<td>7.0.0</td>
 </tr>
 <tr>
 <td>CU APP</td>
-<td>R4.2.3_jupiler</td>
+<td>R4.3.12_leffe</td>
 </tr>
 <tr>
-<td>DU</td>
-<td>2023-05-08-q1-patch-release-01</td>
+<td>cell wrapper config</td>
+<td>0.2.4</td>
 </tr>
 <tr>
-<td>L1</td>
+<td>Effnet-DU</td>
+<td>2024-01-31-q3-patch-release-01-8.7.4</td>
+</tr>
+<tr>
+<td>Phluido-UL1</td>
 <td>8.7.4</td>
 </tr>
 <tr>
@@ -629,20 +593,16 @@ This system release contains </p>
 </tr>
 <tr>
 <td>BNTL550</td>
-<td>0.5.2/0.6.0</td>
+<td>0.7.1</td>
 </tr>
 <tr>
-<td>cell wrapper</td>
-<td>2.3.0</td>
-</tr>
-<tr>
-<td>DU/RU</td>
-<td>5.1.0.30736</td>
+<td>NodeH-DU/RU</td>
+<td>5.2.0.32092</td>
 </tr>
 </tbody>
 </table>
 <h2 id="3-dashboard">3. Dashboard<a class="headerlink" href="#3-dashboard" title="Permanent link">&para;</a></h2>
-<p>The dashboard can be accessed via <code>https://"RIC_CU_VM_IP":31315</code></p>
+<p>The dashboard can be accessed via <code>https://"DRAX_VM_IP":31315</code></p>
 <h3 id="31-cell-monitoring">3.1. Cell Monitoring<a class="headerlink" href="#31-cell-monitoring" title="Permanent link">&para;</a></h3>
 <p>From the <strong>Home</strong> tab the cell status can be monitored and the UEs attached to it.</p>
 <p align="center">
@@ -662,18 +622,9 @@ This system release contains </p>
 <li>UL Throughput on the NG-Interface per UE.</li>
 </ul>
 </li>
-<li>Accessibility and Mobility Counters (e.g. Number of RRC Attempts or Number of Handover Execution Successes) can be viewed in the <strong>5G PM Counters</strong> dashboard. The dashboard includes:<ul>
-<li>RRC Connection Attempts and sub-counters for each of the connection attempt cause (MO Signalling, MO Data, ... etc)</li>
-<li>RRC Connection Successes and sub-counters for each of the connection success causes (MO Signalling, MO Data, ... etc)</li>
-<li>PDU Session Setup Requests.</li>
-<li>PDU Session Setup Failures.</li>
-<li>Intra-gNB Handover Execution Attempts.</li>
-<li>Intra-gNB Handover Execution Successes.</li>
-<li>Mean and Max Number of RRC Connections.<blockquote>
+<li>Accessibility and Mobility Counters (e.g. Number of RRC Attempts or Number of Handover Execution Successes) can be viewed in the <strong>5G CUCP PM Counters</strong> dashboard.<blockquote>
 <p>PS: The definition of these counters are included in 3GPP TS 28.552 .</p>
 </blockquote>
-</li>
-</ul>
 </li>
 <li>A live view of the RIC/CU/CellWrapper Logs can be viewed using the <strong>Loki Log Dashboard</strong>.</li>
 </ul>
@@ -701,7 +652,6 @@ This system release contains </p>
 <li><a href="modifying-ran650-or-ran550/">RU/DU Configuraiton</a></li>
 <li><a href="handover-configuration/">Handover Configuration</a></li>
 <li><a href="mocn-and-slicing/">MOCN and Slicing</a></li>
-<li><a href="nodeh-du-ru-operation/">Split 2 RU/DU Configuration</a></li>
 <li><a href="logs-collection/">Logs Collection</a></li>
 </ul>
 <h2 id="5-accelleran-customer-support-desk">5. Accelleran Customer Support Desk<a class="headerlink" href="#5-accelleran-customer-support-desk" title="Permanent link">&para;</a></h2>

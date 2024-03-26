@@ -22,7 +22,7 @@
     
     
       
-        <title>DU/RU Configuration - Accelleran 5G O-RAN System - 2023.2.0 release</title>
+        <title>DU/RU Configuration - Accelleran 5G O-RAN System Operational Guide [2023.3.0]</title>
       
     
     
@@ -86,7 +86,7 @@
 
 <header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href=".." title="Accelleran 5G O-RAN System - 2023.2.0 release" class="md-header__button md-logo" aria-label="Accelleran 5G O-RAN System - 2023.2.0 release" data-md-component="logo">
+    <a href=".." title="Accelleran 5G O-RAN System Operational Guide [2023.3.0]" class="md-header__button md-logo" aria-label="Accelleran 5G O-RAN System Operational Guide [2023.3.0]" data-md-component="logo">
       
   <img src="../images/accelleran_logo.png" alt="logo">
 
@@ -99,7 +99,7 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            Accelleran 5G O-RAN System - 2023.2.0 release
+            Accelleran 5G O-RAN System Operational Guide [2023.3.0]
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
@@ -255,23 +255,6 @@
   
   
     <li class="md-tabs__item">
-      <a href="../nodeh-du-ru-operation/" class="md-tabs__link">
-        
-  
-    
-  
-  Split 2 Cell Operation
-
-      </a>
-    </li>
-  
-
-      
-        
-  
-  
-  
-    <li class="md-tabs__item">
       <a href="../logs-collection/" class="md-tabs__link">
         
   
@@ -314,12 +297,12 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href=".." title="Accelleran 5G O-RAN System - 2023.2.0 release" class="md-nav__button md-logo" aria-label="Accelleran 5G O-RAN System - 2023.2.0 release" data-md-component="logo">
+    <a href=".." title="Accelleran 5G O-RAN System Operational Guide [2023.3.0]" class="md-nav__button md-logo" aria-label="Accelleran 5G O-RAN System Operational Guide [2023.3.0]" data-md-component="logo">
       
   <img src="../images/accelleran_logo.png" alt="logo">
 
     </a>
-    Accelleran 5G O-RAN System - 2023.2.0 release
+    Accelleran 5G O-RAN System Operational Guide [2023.3.0]
   </label>
   
   <ul class="md-nav__list" data-md-scrollfix>
@@ -482,6 +465,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#3-extra-info" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Extra Info
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -522,26 +514,6 @@
   
   <span class="md-ellipsis">
     Multi Slice and MOCN Configuration
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../nodeh-du-ru-operation/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Split 2 Cell Operation
   </span>
   
 
@@ -650,6 +622,70 @@
 <li>The RAN650 or RAN550 units usually take from 4~6 mins to boot up after a power cycle. The status of the RU boot up will be printed in a file during boot up. It can be checked by: </li>
 </ul>
 <p><code>tail -F /tmp/logs/radio_status</code></p>
+<h2 id="3-extra-info">3. Extra Info<a class="headerlink" href="#3-extra-info" title="Permanent link">&para;</a></h2>
+<ul>
+<li>When submitting the config, the <code>advanced settings</code> toggele on the configuration confirmation pop up message can be used to not restart the DU, RU or both.</li>
+</ul>
+<blockquote>
+<p>PS: As explained above, for the Frequency change for example an RU and DU restart would be needed.</p>
+</blockquote>
+<ul>
+<li>Below table have details on these parameters to take effect:</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Need DU Restart</th>
+<th>Need RU Restart</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CELL_ID</td>
+<td>True</td>
+<td><strong><em>False</em></strong>*</td>
+</tr>
+<tr>
+<td>TAC</td>
+<td>True</td>
+<td><strong><em>False</em></strong></td>
+</tr>
+<tr>
+<td>PCI</td>
+<td>True</td>
+<td><strong><em>False</em></strong></td>
+</tr>
+<tr>
+<td>Frequency Band</td>
+<td>True</td>
+<td><strong><em>False</em></strong></td>
+</tr>
+<tr>
+<td>DL ARFCN</td>
+<td>True</td>
+<td>True</td>
+</tr>
+<tr>
+<td>DL Bandwidth</td>
+<td>True</td>
+<td>True</td>
+</tr>
+<tr>
+<td>Max EIRP</td>
+<td><strong><em>False</em></strong></td>
+<td><strong><em>False</em></strong></td>
+</tr>
+<tr>
+<td>PLMN_ID and Slice Config</td>
+<td>True</td>
+<td><strong><em>False</em></strong></td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>Note: Except for the Max EIRP (RU TX Power) all cell parameters would require at least the DU to restart to take effect.</p>
+</blockquote>
 
 
 

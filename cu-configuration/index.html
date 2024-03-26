@@ -22,7 +22,7 @@
     
     
       
-        <title>CU Configuration - Accelleran 5G O-RAN System - 2023.2.0 release</title>
+        <title>CU Configuration - Accelleran 5G O-RAN System Operational Guide [2023.3.0]</title>
       
     
     
@@ -86,7 +86,7 @@
 
 <header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href=".." title="Accelleran 5G O-RAN System - 2023.2.0 release" class="md-header__button md-logo" aria-label="Accelleran 5G O-RAN System - 2023.2.0 release" data-md-component="logo">
+    <a href=".." title="Accelleran 5G O-RAN System Operational Guide [2023.3.0]" class="md-header__button md-logo" aria-label="Accelleran 5G O-RAN System Operational Guide [2023.3.0]" data-md-component="logo">
       
   <img src="../images/accelleran_logo.png" alt="logo">
 
@@ -99,7 +99,7 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            Accelleran 5G O-RAN System - 2023.2.0 release
+            Accelleran 5G O-RAN System Operational Guide [2023.3.0]
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
@@ -255,23 +255,6 @@
   
   
     <li class="md-tabs__item">
-      <a href="../nodeh-du-ru-operation/" class="md-tabs__link">
-        
-  
-    
-  
-  Split 2 Cell Operation
-
-      </a>
-    </li>
-  
-
-      
-        
-  
-  
-  
-    <li class="md-tabs__item">
       <a href="../logs-collection/" class="md-tabs__link">
         
   
@@ -314,12 +297,12 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href=".." title="Accelleran 5G O-RAN System - 2023.2.0 release" class="md-nav__button md-logo" aria-label="Accelleran 5G O-RAN System - 2023.2.0 release" data-md-component="logo">
+    <a href=".." title="Accelleran 5G O-RAN System Operational Guide [2023.3.0]" class="md-nav__button md-logo" aria-label="Accelleran 5G O-RAN System Operational Guide [2023.3.0]" data-md-component="logo">
       
   <img src="../images/accelleran_logo.png" alt="logo">
 
     </a>
-    Accelleran 5G O-RAN System - 2023.2.0 release
+    Accelleran 5G O-RAN System Operational Guide [2023.3.0]
   </label>
   
   <ul class="md-nav__list" data-md-scrollfix>
@@ -414,6 +397,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#3-extra-info" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Extra Info
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -474,26 +466,6 @@
   
   <span class="md-ellipsis">
     Multi Slice and MOCN Configuration
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../nodeh-du-ru-operation/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Split 2 Cell Operation
   </span>
   
 
@@ -573,6 +545,11 @@ You can click the icon under the Edit column of each CU component to edit its co
 </p>
 
 <p><strong>IMPORTANT</strong>  Do not attempt to modify slices and PLMNs unless you are aware of the target Scenario you want to achieve: slice configuration and multiple PLMN (MOCN) configurations are rather complex to handle and require that CU, DU and Core are configured coherently in order for such scenarios to be functional. We recommend to consult the relative sections of this document and contact your Core Network Supplier and Accelleran to tailor a solution for your specific case. </p>
+<h2 id="3-extra-info">3. Extra Info<a class="headerlink" href="#3-extra-info" title="Permanent link">&para;</a></h2>
+<ul>
+<li>As explained all CU-CP or CU-UP parameters would require to set the admin state to locked before submitting.</li>
+<li>But using the API calls, some of parameters would take effect immediately without a need to restart the CU-CP (e.g. modifications on the neighbor relation configuration)</li>
+</ul>
 
 
 

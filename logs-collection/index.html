@@ -11,7 +11,7 @@
         <link rel="canonical" href="https://accelleran.github.io/ran-operation-guide/logs-collection/">
       
       
-        <link rel="prev" href="../nodeh-du-ru-operation/">
+        <link rel="prev" href="../mocn-and-slicing/">
       
       
       
@@ -20,7 +20,7 @@
     
     
       
-        <title>Logs Collection - Accelleran 5G O-RAN System - 2023.2.0 release</title>
+        <title>Logs Collection - Accelleran 5G O-RAN System Operational Guide [2023.3.0]</title>
       
     
     
@@ -84,7 +84,7 @@
 
 <header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href=".." title="Accelleran 5G O-RAN System - 2023.2.0 release" class="md-header__button md-logo" aria-label="Accelleran 5G O-RAN System - 2023.2.0 release" data-md-component="logo">
+    <a href=".." title="Accelleran 5G O-RAN System Operational Guide [2023.3.0]" class="md-header__button md-logo" aria-label="Accelleran 5G O-RAN System Operational Guide [2023.3.0]" data-md-component="logo">
       
   <img src="../images/accelleran_logo.png" alt="logo">
 
@@ -97,7 +97,7 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            Accelleran 5G O-RAN System - 2023.2.0 release
+            Accelleran 5G O-RAN System Operational Guide [2023.3.0]
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
@@ -249,23 +249,6 @@
         
   
   
-  
-    <li class="md-tabs__item">
-      <a href="../nodeh-du-ru-operation/" class="md-tabs__link">
-        
-  
-    
-  
-  Split 2 Cell Operation
-
-      </a>
-    </li>
-  
-
-      
-        
-  
-  
     
   
   
@@ -312,12 +295,12 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href=".." title="Accelleran 5G O-RAN System - 2023.2.0 release" class="md-nav__button md-logo" aria-label="Accelleran 5G O-RAN System - 2023.2.0 release" data-md-component="logo">
+    <a href=".." title="Accelleran 5G O-RAN System Operational Guide [2023.3.0]" class="md-nav__button md-logo" aria-label="Accelleran 5G O-RAN System Operational Guide [2023.3.0]" data-md-component="logo">
       
   <img src="../images/accelleran_logo.png" alt="logo">
 
     </a>
-    Accelleran 5G O-RAN System - 2023.2.0 release
+    Accelleran 5G O-RAN System Operational Guide [2023.3.0]
   </label>
   
   <ul class="md-nav__list" data-md-scrollfix>
@@ -414,26 +397,6 @@
   
   <span class="md-ellipsis">
     Multi Slice and MOCN Configuration
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../nodeh-du-ru-operation/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Split 2 Cell Operation
   </span>
   
 
@@ -565,18 +528,19 @@ radiocontrol<span class="w"> </span>-o<span class="w"> </span>D<span class="w"> 
 <p>A tcpdump on the CU VM can be started before running the test case to save all the packets exchanged between the core &lt;-&gt; CU &lt;-&gt; DU.</p>
 <ul>
 <li>Below command can be used from within the CU VM.
-tcpdump -i enp1s0 'sctp' -w cu_side_trace.pcap</li>
+<div class="highlight"><pre><span></span><code>tcpdump<span class="w"> </span>-i<span class="w"> </span>enp1s0<span class="w"> </span><span class="s1">&#39;sctp&#39;</span><span class="w"> </span>-w<span class="w"> </span>cu_side_trace.pcap
+</code></pre></div></li>
 </ul>
 <blockquote>
 <ul>
-<li>This is assuming the interface the CU VM is using is "enp1s0", please change it according to your setup.</li>
-<li>It is better to save only sctp data unless the test/debug case in question is related to user plane packets otherwise use "sctp or udp" in the command.</li>
+<li>This is assuming the interface the CU VM is using is <code>enp1s0</code>, please change it according to your setup.</li>
+<li>It is better to save only sctp data unless the test/debug case in question is related to user plane packets otherwise use <code>sctp or port 2152</code> in the command.</li>
 </ul>
 </blockquote>
 <p>To save the CU logs:</p>
 <ul>
 <li>Create a file named collect_logs.sh with the content below.</li>
-<li>By default it will save the logs of the last 10minutes but to save the logs of the last 20mins for example, run: "<code>./collect_logs.sh 10</code>"</li>
+<li>By default it will save the logs of the last 10minutes but to save the logs of the last 20mins for example, run: <code>./collect_logs.sh 10</code></li>
 <li>The log files will be saved in below two files: <code>/tmp/logs.tar.gz</code> and <code>/tmp/logs-previous.tar.gz</code></li>
 </ul>
 <div class="highlight"><pre><span></span><code><span class="nv">PODS</span><span class="o">=</span><span class="s2">&quot;</span><span class="k">$(</span>kubectl<span class="w"> </span>get<span class="w"> </span>pods<span class="w"> </span>-o<span class="w"> </span>name<span class="k">)</span><span class="s2">&quot;</span>
@@ -611,13 +575,6 @@ mkdir<span class="w"> </span>-p<span class="w"> </span><span class="s2">&quot;</
 
 <span class="nv">LOGFILE</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">LOGDIR</span><span class="si">}</span><span class="s2">/version.txt&quot;</span>
 helm<span class="w"> </span>list<span class="w"> </span>&gt;<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$LOGFILE</span><span class="s2">&quot;</span>
-<span class="o">{</span>
-kubectl<span class="w"> </span>get<span class="w"> </span>pods
-helm<span class="w"> </span>status<span class="w"> </span>acc-5g-cu-cp
-helm<span class="w"> </span>status<span class="w"> </span>acc-5g-cu-up
-helm<span class="w"> </span>status<span class="w"> </span>ric
-helm<span class="w"> </span>status<span class="w"> </span>cw
-<span class="o">}</span><span class="w"> </span>&gt;<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$LOGFILE</span><span class="s2">&quot;</span>
 
 tar<span class="w"> </span>czf<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$LOGDIR</span><span class="s2">.tar.gz&quot;</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$LOGDIR</span><span class="s2">&quot;</span>
 rm<span class="w"> </span>-r<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$LOGDIR</span><span class="s2">&quot;</span>
@@ -653,13 +610,6 @@ mkdir<span class="w"> </span>-p<span class="w"> </span><span class="s2">&quot;</
 
 <span class="nv">LOGFILE</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">LOGDIR</span><span class="si">}</span><span class="s2">/version.txt&quot;</span>
 helm<span class="w"> </span>list<span class="w"> </span>&gt;<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$LOGFILE</span><span class="s2">&quot;</span>
-<span class="o">{</span>
-kubectl<span class="w"> </span>get<span class="w"> </span>pods
-helm<span class="w"> </span>status<span class="w"> </span>acc-5g-cu-cp
-helm<span class="w"> </span>status<span class="w"> </span>acc-5g-cu-up
-helm<span class="w"> </span>status<span class="w"> </span>ric
-helm<span class="w"> </span>status<span class="w"> </span>cw
-<span class="o">}</span><span class="w"> </span>&gt;<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$LOGFILE</span><span class="s2">&quot;</span>
 
 tar<span class="w"> </span>czf<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$LOGDIR</span><span class="s2">.tar.gz&quot;</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$LOGDIR</span><span class="s2">&quot;</span>
 rm<span class="w"> </span>-r<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$LOGDIR</span><span class="s2">&quot;</span>
